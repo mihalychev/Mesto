@@ -1,0 +1,16 @@
+button.button__edit {
+    width: 45px;
+    height: 24px;
+    font-size: 14px;
+    border-radius: 2px;
+    transition: color 0.8s linear, background 0.2s linear;
+}
+
+button.button__edit:hover {
+    background-color: #fff;
+    color: black;
+}
+
+button.button__edit:active {
+    background-color: rgb(69, 69, 252);
+}
