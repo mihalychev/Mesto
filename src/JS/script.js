@@ -13,8 +13,12 @@ import {UserInfo} from './UserInfo.js';
     validLength: 'Должно быть от 2 до 30 символов',
   }
 
+  const serverUrl = process.env.NODE_ENV === 'development' ?
+    'http://praktikum.tk/cohort8' :
+    'https://praktikum.tk/cohort8'
+
   const api = new Api({
-    baseUrl: 'https://praktikum.tk/cohort8',
+    baseUrl: serverUrl,
     headers: {
       authorization: 'd83f15eb-acd4-491b-bd91-c6ee7381d2cc',
       'Content-Type': 'application/json'

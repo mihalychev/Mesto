@@ -18,7 +18,7 @@ export class Popup {
       popupImage.classList.add('image');
       popupImageContent.appendChild(popupImage);
 
-      popupImage.src = `<%=require('${target.style.backgroundImage.substr(5, target.style.backgroundImage.length - 7)}')%>`;
+      popupImage.src = target.style.backgroundImage.substr(5, target.style.backgroundImage.length - 7);
 
       document.querySelector('.popup_image').classList.add('popup_is-opened');
     }
