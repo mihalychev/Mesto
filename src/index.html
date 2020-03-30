@@ -1,13 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mesto</title>
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
 </head>
 <body>
-  <h1>Hello</h1>
-  <script src="<%=htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+  <div class="root">
+    <header class="header root__section">
+      <img src="<%=require('./images/logo.svg').default%>" alt="mesto logo" class="logo">
+    </header>
+    <div class="profile root__section">
+      <div class="user-info">
+        <div class="user-info__photo"></div>
+        <div class="user-info__data">
+          <h1 class="user-info__name"></h1>
+          <p class="user-info__job"></p>
+          <button class="button button__edit">Edit</button>
+        </div>
+        <button class="button user-info__button">+</button>
+      </div>
+    </div>
+    <div class="places-list root__section">
+    </div>
+    <div class="popup popup_add-cards">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup__close_add">
+        <h3 class="popup__title">Новое место</h3>
+        <form class="popup__form" novalidate name="new">
+          <input type="text" name="title" autocomplete="off" class="popup__input popup__input_type_name" placeholder="Название" minlength="2" maxlength="30" required>
+          <span class="error error_title">Это обязательное поле</span>
+          <input type="text" name="link" autocomplete="off" class="popup__input popup__input_type_link-url" placeholder="Ссылка на картинку" required>
+          <span class="error error_link">Это обязательное поле</span>
+          <button type="submit" class="button popup__button popup__button_add" disabled>+</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_edit-profile">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup__close_edit">
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form class="popup__form" novalidate name="edit">
+          <input type="text" name="name" autocomplete="off" class="popup__input popup__input_type_edit-name" placeholder="Имя" minlength="2" maxlength="30" required>
+          <span class="error error_name"></span>
+          <input type="text" name="about" autocomplete="off" class="popup__input popup__input_type_about" placeholder="О себе" minlength="2" maxlength="30" required>
+          <span class="error error_about"></span>
+          <button type="submit" class="button popup__button popup__button_edit active">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_image">
+      <div class="popup__image">
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup__close_image">
+      </div>
+    </div>
+    <div class="popup popup_avatar">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup__close_avatar">
+        <h3 class="popup__title">Обновить аватар</h3>
+        <form class="popup__form" novalidate name="avatar">
+          <input type="text" name="link" autocomplete="off" class="popup__input popup__input_type-avatar" placeholder="Ссылка на аватар" required>
+          <span class="error error_avatar"></span>
+          <button type="submit" class="button popup__button popup__button_avatar">Сохранить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- <script src="./index.js"></script> -->
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
 </html>

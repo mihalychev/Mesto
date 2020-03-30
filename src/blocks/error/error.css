@@ -1,0 +1,12 @@
+.error {
+    display: block;
+    color: #ff0000;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 15px;
+    padding: 0 6px;
+}
+
+.error:last-child {
+    margin-bottom: 0;
+}
